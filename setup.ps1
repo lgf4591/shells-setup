@@ -40,10 +40,10 @@ Function Install-ModuleIfNotInstalled(
         if ($null -ne $minimalVersion) {
             # $optionalArgs['RequiredVersion'] = $minimalVersion
             # Install-Module -Name $moduleName @optionalArgs -AllowPrerelease -Scope CurrentUser -Repository PSGallery -Force -Verbose
-            Install-Module -Name $moduleName -RequiredVersion $minimalVersion -AllowPrerelease -Scope CurrentUser -Repository PSGallery -Force -Verbose
+            Install-Module -Name $moduleName -RequiredVersion $minimalVersion -AllowPrerelease -Scope CurrentUser -Repository PSGallery -Force -Verbose -AllowClobber
         }
         else {
-            Install-Module -Name $moduleName -AllowPrerelease -Scope CurrentUser -Repository PSGallery -Force -Verbose
+            Install-Module -Name $moduleName -AllowPrerelease -Scope CurrentUser -Repository PSGallery -Force -Verbose -AllowClobber
         }
     }
 }

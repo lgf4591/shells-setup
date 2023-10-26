@@ -65,10 +65,10 @@ function HKCU: { Set-Location HKCU: }
 function Env: { Set-Location Env: }
 
 # Creates drive shortcut for Work Folders, if current user account is using it
-if (Test-Path "$env:USERPROFILE\Work Folders") {
-    New-PSDrive -Name Work -PSProvider FileSystem -Root "$env:USERPROFILE\Work Folders" -Description "Work Folders"
-    function Work: { Set-Location Work: }
-}
+# if (Test-Path "$env:USERPROFILE\Work Folders") {
+#     New-PSDrive -Name Work -PSProvider FileSystem -Root "$env:USERPROFILE\Work Folders" -Description "Work Folders"
+#     function Work: { Set-Location Work: }
+# }
 
 # Set up command prompt and window title. Use UNIX-style convention for identifying 
 # whether user is elevated (root) or not. Window title shows current version of PowerShell
@@ -161,7 +161,7 @@ Set-Alias -Name vim -Value $EDITOR
 
 
 function ll { Get-ChildItem -Path $pwd -File }
-function g { Set-Location $HOME\Documents\Github }
+# function g { Set-Location $HOME\Documents\Github }
 function gcom {
     git add .
     git commit -m "$args"
@@ -253,8 +253,6 @@ Invoke-Expression (& { (zoxide init powershell | Out-String) })
 # oh-my-posh init pwsh --config "$env:LOCALAPPDATA\Programs\oh-my-posh\themes\kushal.omp.json" | Invoke-Expression
 
 
-$ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+# $ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+$ENV:STARSHIP_CONFIG = "$HOME\starship.toml"
 Invoke-Expression (&starship init powershell)
-
-
-
