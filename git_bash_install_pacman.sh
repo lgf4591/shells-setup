@@ -94,6 +94,7 @@ pacman -S --overwrite="*" --noconfirm ${pkgs}
 
 rm -rf "${TEMP_DIR}"
 printf "\n"
-# download .\libs\msys-event_core-2-1-7.dll to git path: C:\Program Files\Git\usr\bin
+# download .\libs\msys-event_core-2-1-7.dll to git path: C:\Program Files\Git\usr\bin for tmux
+curl -L -o /c/Program\ Files/GIT/usr/bin/msys-event_core-2-1-7.dll https://github.com/lgf4591/shells-setup/raw/main/libs/msys-event_core-2-1-7.dll
 echo "Everything is ready, you can now enjoy pacman!"
 qrencode -o - -t ANSI 'https://chenyuning.cn/archives/windows-xia-wei-git-bash-zhong-duan-pei-zhi-pacman-he-zsh'
