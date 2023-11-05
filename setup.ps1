@@ -170,7 +170,7 @@ if (CommandIsExisted "starship") {
     # scoop install starship
     winget install --id Starship.Starship
 }
-Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/starship/starship.toml -o "$HOME\starship.toml"
+Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/starship/starship.toml -o "$HOME\.starship.toml"
 
 
 # Font Install

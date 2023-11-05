@@ -28,8 +28,8 @@ URL_PREFIX=https://mirrors.tuna.tsinghua.edu.cn/msys2/msys
 TEMP_DIR="$(mktemp -d)"
 
 echo "Downloading zstd package"
-# ZSTD_VERSION=v1.5.1
-ZSTD_VERSION=$(curl -s "https://api.github.com/repos/facebook/zstd/releases/latest" | grep -o '"tag_name": ".*"' | cut -d'"' -f4)
+ZSTD_VERSION=v1.5.1 # BUG: 使用脚本自动获取最新版本的ZSTD安装不成功
+# ZSTD_VERSION=$(curl -s "https://api.github.com/repos/facebook/zstd/releases/latest" | grep -o '"tag_name": ".*"' | cut -d'"' -f4)
 if [ "$PACMAN_ARCH" = "x86_64" ]; then
 	ZSTD_ARCH=win64
 else
@@ -98,3 +98,6 @@ printf "\n"
 curl -L -o /c/Program\ Files/GIT/usr/bin/msys-event_core-2-1-7.dll https://github.com/lgf4591/shells-setup/raw/main/libs/msys-event_core-2-1-7.dll
 echo "Everything is ready, you can now enjoy pacman!"
 qrencode -o - -t ANSI 'https://chenyuning.cn/archives/windows-xia-wei-git-bash-zhong-duan-pei-zhi-pacman-he-zsh'
+# qrencode -o - -t ANSI256 'https://chenyuning.cn/archives/windows-xia-wei-git-bash-zhong-duan-pei-zhi-pacman-he-zsh'
+
+
