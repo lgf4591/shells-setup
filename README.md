@@ -26,6 +26,93 @@ curl -fsSL https://github.com/lgf4591/shells-setup/raw/main/git_bash_install_pac
 
 ```
 
+## [Scoop](https://www.cnblogs.com/Edge-coordinates/p/15130184.html)
+
+```powershell
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+irm get.scoop.sh | iex
+
+scoop config proxy localhost:2080
+# scoop config rm proxy
+scoop config aria2-enabled false
+
+scoop install git
+
+PS C:\Users\lgf> scoop bucket known
+main
+extras
+versions
+nirsoft
+sysinternals
+php
+nerd-fonts
+nonportable
+java
+games
+
+scoop bucket add extras
+scoop bucket add versions
+scoop bucket add nerd-fonts
+scoop bucket add nirsoft
+scoop bucket add sysinternals
+scoop bucket add php
+scoop bucket add nonportable
+scoop bucket add java
+scoop bucket add games
+scoop bucket add
+
+scoop install openssl openssh vim neovim emacs kate geany
+scoop install zoxide fzf lf bat
+scoop install starship
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+scoop install 7zip cmake make wget curl aria2
+scoop install vscode 
+scoop install wpsoffice 
+scoop install everything geekuninstaller ccleaner spacesniffer
+
+scoop install JetBrainsMono-NF
+scoop install FiraCode-NF
+scoop install Font-Awesome
+scoop install Hack-NF
+scoop install Cascadia-Code
+
+
+PS C:\Users\lgf> scoop search nodejs
+WARN  Error parsing JSON at C:\Users\lgf\scoop\buckets\extras\bucket\mcomix.json.
+Results from local buckets...
+
+Name          Version  Source      Binaries
+----          -------  ------      --------
+nodejs-lts    20.10.0  main
+nodejs        21.2.0   main
+nodejs-lts-np 18.15.0  nonportable
+nodejs-np     21.2.0   nonportable
+nodejs010     0.10.48  versions
+nodejs012     0.12.18  versions
+nodejs10      10.24.1  versions
+nodejs11      11.15.0  versions
+nodejs12      12.22.12 versions
+nodejs14      14.21.3  versions
+nodejs16      16.20.2  versions
+nodejs18      18.18.2  versions
+nodejs4       4.9.1    versions
+nodejs5       5.12.0   versions
+nodejs6       6.17.1   versions
+nodejs7       7.10.1   versions
+nodejs8       8.17.0   versions
+nodejs9       9.11.2   versions
+
+scoop install sudo
+sudo scoop install -g nodejs-lts
+sudo scoop install -g nodejs@18
+
+sudo scoop install -g golang
+
+
+
+scoop install 7zip aria2 cmake dingtalk everything geekuninstaller git nodejs openssl snipaste v2ray v2rayn vscode wechat wpsoffice xray xmind tortoisesvn python openssh mysql-workbench mobaxterm ccleaner spacesniffer mysql57
+```
 
 ## windows中cmd和powershell设置代理
 https://blog.csdn.net/qq_40989066/article/details/122548540

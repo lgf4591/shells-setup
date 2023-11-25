@@ -1,4 +1,4 @@
-$env:all_proxy="socks5://127.0.0.1:10808"
+$env:all_proxy="socks5://127.0.0.1:2080"
 
 function CommandIsExisted(
     [string] [Parameter(Mandatory = $true)] $command
@@ -170,7 +170,7 @@ if (CommandIsExisted "starship") {
     # scoop install starship
     winget install --id Starship.Starship
 }
-Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/starship/starship.toml -o "$HOME\.starship.toml"
+Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/starship/starship.toml -OutFile "$HOME\.starship.toml"
 
 
 # Font Install
