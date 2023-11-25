@@ -80,7 +80,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
         }
 
         # Invoke-RestMethod https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
-        Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+        Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
         Write-Host "The profile @ [$PROFILE] has been created."
     }
     catch {
@@ -91,7 +91,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
 else {
         Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1 -Force
         # Invoke-RestMethod https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
-        Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/Microsoft.PowerShell_profile.ps1 -o $PROFILE
+        Invoke-RestMethod https://github.com/lgf4591/shells-setup/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
         Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
 }
 & $profile
